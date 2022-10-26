@@ -16,7 +16,9 @@ namespace RandomFileGen
                 return 1;
             }
 
+            // for now doing validation of whether or not this is a valid file name is more hassle than its worth, just let exception happen at file write.
             var fileName = args[0];
+
             if (!long.TryParse(args[1], out long fileSizeInBytes))
             {
                 Console.Error.WriteLine("Error: the second parameter must parse as a long numeric type.");
